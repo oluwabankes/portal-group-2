@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Babcock Academy - Forgot Password</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header class="navbar">
+        <div class="container">
+            <h1>Babcock Academy</h1>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="index.html">Login</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main class="main-content">
+        <div class="container">
+            <h2 style="color: var(--primary-color);">🔒 Password Reset</h2>
+
+            <div class="card" style="max-width: 500px; margin: 20px auto;">
+                <h3>Step 1: Verify Identity</h3>
+                <p>Enter your registered Student ID or email address below. A password reset link will be sent to your inbox.</p>
+                
+                <form action="reset_sent.html" method="GET">
+                    <label for="id_email">Student ID or Registered Email</label>
+                    <input type="text" id="id_email" name="id_email" required placeholder="e.g., BA/2025/G02 or group2@babcockacademy.edu">
+
+                    <button type="submit" class="cta-button" style="width: 100%; margin-top: 10px;">Send Reset Link</button>
+                </form>
+
+                <p style="margin-top: 15px; text-align: center;"><a href="index.html">Go back to Login</a></p>
+            </div>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2025 Babcock Academy. IT Support: support@babcockacademy.edu</p>
+        </div>
+    </footer>
+
+</body>
+</html>

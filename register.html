@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Babcock Academy - Course Registration</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        /* CSS for the selection buttons/rows */
+        .course-row input[type="checkbox"] {
+            margin-right: 10px;
+            transform: scale(1.3);
+        }
+        .units-summary {
+            font-size: 1.2em;
+            margin-top: 20px;
+            padding: 10px;
+            border: 1px solid #ccc;
+            background-color: var(--light-bg);
+            border-radius: 5px;
+        }
+        .units-summary span {
+            font-weight: bold;
+            color: var(--primary-color);
+        }
+    </style>
+</head>
+<body>
+
+    <header class="navbar">
+        <div class="container">
+            <h1>Babcock Academy</h1>
+            <nav>
+                <ul>
+                    <li><a href="dashboard.html">Dashboard</a></li>
+                    <li><a href="results.html">My Results</a></li>
+                    <li><a href="timetable.html">Timetable</a></li>
+                    <li><a href="fees.html">Fees</a></li>
+                    <li><a href="resources.html">Resources</a></li>
+                    <li><a href="index.html">Log Out</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main class="main-content">
+        <div class="container">
+            <h2 style="color: var(--primary-color);">Course Registration: 200 Level, Second Semester</h2>
+
+            <div class="card" style="margin-bottom: 20px;">
+                <p style="font-size: 1.1em;">
+                    <strong>Student ID:</strong> BA/2025/G02 | 
+                    <strong>Max Recommended Units:</strong> 21 | 
+                    <strong>Status:</strong> <span style="color: green; font-weight: bold;">Eligible to Register.</span>
+                </p>
+            </div>
+            
+            <form id="registrationForm">
+                <div class="card">
+                    <h3>Mandatory Courses (Total: 10 Units)</h3>
+                    <table class="results-table">
+                        <thead>
+                            <tr>
+                                <th>Select</th>
+                                <th>Course Code</th>
+                                <th>Course Title</th>
+                                <th>Units</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr class="course-row">
+                                <td><input type="checkbox" name="course" value="3" checked disabled></td>
+                                <td>CSC 202</td>
+                                <td>Object-Oriented Programming</td>
+                                <td data-units="3">3</td>
+                            </tr>
+                            <tr class="course-row">
+                                <td><input type="checkbox" name="course" value="3" checked disabled></td>
+                                <td>MTH 203</td>
+                                <td>Linear Algebra</td>
+                                <td data-units="3">3</td>
+                            </tr>
+                            <tr class="course-row">
+                                <td><input type="checkbox" name="course" value="2" checked disabled></td>
+                                <td>GNS 201</td>
+                                <td>Nigerian Peoples and Culture</td>
+                                <td data-units="2">2</td>
+                            </tr>
+                            <tr class="course-row">
+                                <td><input type="checkbox" name="course" value="2" checked disabled></td>
+                                <td>EED 201</td>
+                                <td>Entrepreneurship Theory</td>
+                                <td data-units="2">2</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <div class="card" style="margin-top: 20px;">
+                    <h3>Elective Courses (Select up to 6 Units)</h3>
+                    <table class="results-table">
+                        <thead>
+                            <tr>
+                                <th>Select</th>
+                                <th>Course Code</th>
+                                <th>Course Title</th>
+                                <th>Units</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr class="course-row">
+                                <td><input type="checkbox" name="elective" class="elective-checkbox" data-units="3" onchange="updateUnits()"></td>
+                                <td>CMM 201</td>
+                                <td>Digital Media Production</td>
+                                <td>3</td>
+                            </tr>
+                            <tr class="course-row">
+                                <td><input type="checkbox" name="elective" class="elective-checkbox" data-units="3" onchange="updateUnits()"></td>
+                                <td>BUS 204</td>
+                                <td>Organizational Behavior</td>
+                                <td>3</td>
+                            </tr>
+                            <tr class="course-row">
+                                <td><input type="checkbox" name="elective" class="elective-checkbox" data-units="2" onchange="updateUnits()"></td>
+                                <td>HIS 210</td>
+                                <td>African History Survey</td>
+                                <td>2</td>
+                            </tr>
+                            <tr class="course-row">
+                                <td><input type="checkbox" name="elective" class="elective-checkbox" data-units="1" onchange="updateUnits()"></td>
+                                <td>PED 205</td>
+                                <td>Fitness and Wellness</td>
+                                <td>1</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <div class="units-summary">
+                    Total Registered Units: <span id="totalUnits">10</span>
+                </div>
+
+                <div style="margin-top: 20px; text-align: center;">
+                    <button type="button" class="cta-button" onclick="submitRegistration()">Final Submission</button>
+                </div>
+            </form>
+            
+            <p style="margin-top: 15px; font-size: 0.9em; color: #cc0000; text-align: center;">*Note: This is a static page. Submission only shows a confirmation alert, it does not save data.*</p>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2025 Babcock Academy Portal. Ensure you register before the deadline.</p>
+        </div>
+    </footer>
+
+    <script>
+        // Start with the units from the mandatory, disabled courses (4 courses: 3+3+2+2 = 10)
+        let mandatoryUnits = 10;
+
+        function updateUnits() {
+            let electiveUnits = 0;
+            const checkboxes = document.querySelectorAll('.elective-checkbox:checked');
+            
+            checkboxes.forEach(checkbox => {
+                // Get the unit value from the data-units attribute
+                electiveUnits += parseInt(checkbox.getAttribute('data-units'));
+            });
+
+            const total = mandatoryUnits + electiveUnits;
+            document.getElementById('totalUnits').textContent = total;
+            
+            // Optional: Alert if units exceed limit (e.g., 21)
+            if (total > 21) {
+                alert(`Warning: Total units (${total}) exceed the maximum recommended limit of 21.`);
+            }
+        }
+
+        function submitRegistration() {
+            const finalUnits = document.getElementById('totalUnits').textContent;
+            
+            if (finalUnits < 15) {
+                alert("Submission Failed: You must register for a minimum of 15 units.");
+                return;
+            }
+
+            // Simulate successful submission
+            alert(`SUCCESS! Your registration for ${finalUnits} units has been submitted. You will receive an email confirmation.`);
+
+            // Optionally, disable submission button after success
+            document.querySelector('button.cta-button').disabled = true;
+        }
+
+        // Initialize units on page load (already 10)
+        document.addEventListener('DOMContentLoaded', updateUnits);
+    </script>
+
+</body>
+</html>

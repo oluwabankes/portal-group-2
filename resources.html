@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Babcock Academy - Resources & News</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        /* Specific styles for News & Resources */
+        .news-feed {
+            grid-column: 1 / span 2; /* Make news take full width on its row */
+            margin-top: 20px;
+        }
+        .news-item {
+            border-bottom: 1px solid #eee;
+            padding: 15px 0;
+        }
+        .news-item:last-child {
+            border-bottom: none;
+        }
+        .news-item h4 {
+            color: var(--primary-color);
+            margin-bottom: 5px;
+        }
+        .news-item span.date {
+            display: block;
+            font-size: 0.8em;
+            color: #666;
+            margin-bottom: 10px;
+        }
+        .resource-list ul {
+            list-style: disc inside;
+            padding-left: 20px;
+        }
+        .resource-list li {
+            margin-bottom: 10px;
+        }
+        .resource-list a {
+            color: var(--primary-color);
+            text-decoration: none;
+        }
+    </style>
+</head>
+<body>
+
+    <header class="navbar">
+        <div class="container">
+            <h1>Babcock Academy</h1>
+            <nav>
+                <ul>
+                    <li><a href="dashboard.html">Dashboard</a></li>
+                    <li><a href="results.html">My Results</a></li>
+                    <li><a href="timetable.html">Timetable</a></li>
+                    <li><a href="fees.html">Fees</a></li>
+                    <li><a href="resources.html">Resources</a></li>
+                    <li><a href="index.html">Log Out</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main class="main-content">
+        <div class="container main-grid">
+          <div class="card resource-list">
+    <h3>📚 Library Resources</h3>
+    <ul>
+        <li><a href="e_resources.html">E-Journal Database (JSTOR Access)</a></li>
+        <li><a href="e_resources.html">Online E-Book Collection</a></li>
+        <li><a href="request_form.html">Request for New Materials Form</a></li>
+        <li><a href="#">Librarian Help Desk Chat</a></li>
+    </ul>
+    <p style="margin-top: 15px; font-size: 0.9em; color: #666;">*Note: Requires VPN if accessing off-campus.*</p>
+</div>
+            <div class="card resource-list">
+    <h3>📄 Important Documents</h3>
+    <ul>
+        <li><a href="handbook.html">Student Handbook 2025/2026</a></li> 
+        <li><a href="calendar.html">Academic Calendar</a></li> 
+        <li><a href="campus_map.html">Campus Map (PDF)</a></li> 
+        <li><a href="#">IT Support Forms</a></li>
+    </ul>
+    <p style="margin-top: 15px; font-size: 0.9em; color: #666;">Check here for official school documents.</p>
+</div>
+            
+            <div class="card news-feed">
+                <h3>📰 Campus News Feed</h3>
+                <div class="news-item">
+                    <h4>Annual Sports Day Postponed</h4>
+                    <span class="date">Posted: November 25, 2025</span>
+                    <p>Due to unexpected weather conditions, the Sports Day scheduled for Friday has been moved to next Tuesday.</p>
+                </div>
+                <div class="news-item">
+                    <h4>Internship Opportunity: Global Tech Corp</h4>
+                    <span class="date">Posted: November 22, 2025</span>
+                    <p>The Department of Computing is sharing details on a competitive summer internship program. See department notice board for requirements.</p>
+                </div>
+                <div class="news-item">
+                    <h4>New Dining Hall Menu Activated</h4>
+                    <span class="date">Posted: November 18, 2025</span>
+                    <p>The updated meal plan starts Monday. Please visit the cafeteria site for a look at the new items.</p>
+                </div>
+            </div>
+
+        </div>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2025 Babcock Academy Portal. Information updated daily.</p>
+        </div>
+    </footer>
+
+</body>
+</html>

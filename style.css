@@ -1,0 +1,221 @@
+/* Basic Reset and Variables */
+:root {
+    --primary-color: #004d99; /* A professional blue */
+    --secondary-color: #007af4; /* A gold/yellow accent */
+    --text-color: #333;
+    --light-bg: #f7f7f7;
+    --dark-bg: #2c3e50;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    color: var(--text-color);
+    background-color: #fff;
+}
+
+.container {
+    width: 90%;
+    max-width: 1100px;
+    margin: auto;
+    overflow: hidden;
+}
+
+/* --- Navigation Bar --- */
+.navbar {
+    background: var(--primary-color);
+    color: #fff;
+    padding: 1rem 0;
+}
+
+.navbar .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.navbar h1 {
+    font-size: 1.8rem;
+}
+
+.navbar ul {
+    list-style: none;
+    display: flex;
+}
+
+.navbar ul li a {
+    color: #fff;
+    padding: 0 15px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s;
+}
+
+.navbar ul li a:hover {
+    color: var(--secondary-color);
+}
+
+/* --- Hero Section --- */
+.hero-section {
+    background: var(--dark-bg);
+    color: #fff;
+    padding: 4rem 0;
+    text-align: center;
+}
+
+.hero-section h2 {
+    font-size: 2.5rem;
+    margin-bottom: 10px;
+}
+
+.hero-section p {
+    font-size: 1.2rem;
+    margin-bottom: 20px;
+}
+
+/* --- Main Content Layout --- */
+.main-content {
+    padding: 30px 0;
+    background-color: var(--light-bg);
+}
+
+.main-grid {
+    display: grid;
+    grid-template-columns: 1fr 1.5fr; 
+    gap: 30px;
+}
+
+/* Dashboard specific grid */
+.main-content .container > .main-grid {
+    grid-template-columns: 1fr 1fr;
+}
+
+
+.card {
+    background: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* --- Login Panel Styles --- */
+.login-panel h3 {
+    border-bottom: 2px solid var(--secondary-color);
+    padding-bottom: 10px;
+    margin-bottom: 15px;
+}
+
+.login-panel label {
+    display: block;
+    margin-top: 10px;
+    font-weight: bold;
+}
+
+.login-panel input {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+/* --- Announcements Panel Styles --- */
+.announcements-panel h3 {
+    color: var(--primary-color);
+    margin-bottom: 15px;
+}
+
+.announcements-panel ul {
+    list-style: disc inside;
+}
+
+.announcements-panel li {
+    margin-bottom: 10px;
+    padding-left: 5px;
+}
+
+
+/* --- Dashboard Specific Styles --- */
+.summary-panel p, .quick-links li {
+    margin-bottom: 10px;
+}
+.quick-links ul {
+    list-style: none;
+}
+.quick-links a {
+    color: var(--primary-color);
+    text-decoration: none;
+}
+.quick-links a:hover {
+    text-decoration: underline;
+}
+
+/* --- Results Table Style --- */
+.results-table, .timetable-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+.results-table th, .results-table td, .timetable-table th, .timetable-table td {
+    border: 1px solid #ddd;
+    padding: 10px;
+    text-align: left;
+}
+.results-table th, .timetable-table th {
+    background-color: var(--primary-color);
+    color: white;
+}
+.results-table tr:nth-child(even), .timetable-table tr:nth-child(even) {
+    background-color: var(--light-bg);
+}
+.timetable-table {
+    text-align: center;
+}
+.timetable-table .break {
+    background-color: var(--secondary-color);
+    font-weight: bold;
+    color: var(--dark-bg);
+}
+.timetable-table .course {
+    font-weight: bold;
+    color: var(--primary-color);
+}
+
+
+/* --- Call-to-Action Button --- */
+.cta-button {
+    display: inline-block;
+    background: var(--secondary-color);
+    color: var(--text-color);
+    padding: 10px 20px;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: bold;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.cta-button:hover {
+    background: #0036e6;
+}
+
+/* --- Footer --- */
+.footer {
+    background: var(--dark-bg);
+    color: #fff;
+    text-align: center;
+    padding: 20px 0;
+    font-size: 0.9rem;
+}
+
+.footer a {
+    color: var(--secondary-color);
+    text-decoration: none;
+}

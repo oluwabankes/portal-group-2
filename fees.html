@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Babcock Academy - Fee Status</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        /* Specific styles for Fee Status */
+        .status-box {
+            padding: 20px;
+            border-radius: 8px;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        .status-box.paid {
+            background-color: #d4edda; /* Light green */
+            color: #155724;
+            border: 1px solid #c3e6cb;
+        }
+        .status-box.due {
+            background-color: #f8d7da; /* Light red */
+            color: #721c24;
+            border: 1px solid #f5c6cb;
+        }
+        .status-box h3 {
+            margin-bottom: 15px;
+            font-size: 1.8em;
+        }
+        .fee-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+        .fee-table th, .fee-table td {
+            border: 1px solid #ddd;
+            padding: 10px;
+            text-align: left;
+        }
+        .fee-table th {
+            background-color: var(--primary-color);
+            color: white;
+        }
+    </style>
+</head>
+<body>
+
+    <header class="navbar">
+        <div class="container">
+            <h1>Babcock Academy</h1>
+            <nav>
+                <ul>
+                    <li><a href="dashboard.html">Dashboard</a></li>
+                    <li><a href="results.html">My Results</a></li>
+                    <li><a href="timetable.html">Timetable</a></li>
+                    <li><a href="fees.html">Fees</a></li> 
+                    <li><a href="index.html">Log Out</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main class="main-content">
+        <div class="container">
+            <h2 style="color: var(--primary-color);">My Financial Status</h2>
+
+            <div class="status-box paid">
+                <h3>✅ Fees Fully Paid for Current Semester</h3>
+                <p>You have no outstanding balance for the 200 Level, Second Semester.</p>
+            </div>
+            
+            <div class="card">
+                <h3>Fee Breakdown: 200 Level, Second Semester</h3>
+                <table class="fee-table">
+                    <thead>
+                        <tr>
+                            <th>Description</th>
+                            <th>Amount Due (₦)</th>
+                            <th>Amount Paid (₦)</th>
+                            <th>Balance (₦)</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Tuition Fees</td>
+                            <td>450,000.00</td>
+                            <td>450,000.00</td>
+                            <td>0.00</td>
+                        </tr>
+                        <tr>
+                            <td>Accommodation (On-Campus)</td>
+                            <td>150,000.00</td>
+                            <td>150,000.00</td>
+                            <td>0.00</td>
+                        </tr>
+                        <tr>
+                            <td>Development Levy</td>
+                            <td>30,000.00</td>
+                            <td>30,000.00</td>
+                            <td>0.00</td>
+                        </tr>
+                        <tr>
+                            <td>**Total**</td>
+                            <td>**630,000.00**</td>
+                            <td>**630,000.00**</td>
+                            <td>**0.00**</td>
+                        </tr>
+                    </tbody>
+                </table>
+                <p style="margin-top: 20px;">*Receipts for all payments can be downloaded via the accounts office link.*</p>
+                <a href="#" class="cta-button" style="margin-top: 15px;">Proceed to Payment Portal (if balance > 0)</a>
+            </div>
+            
+        </div>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2025 Babcock Academy Portal. Check with the accounts department for any discrepancies.</p>
+        </div>
+    </footer>
+
+</body>
+</html>
